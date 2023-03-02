@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Install Git"
+
+sudo apt-get -y install gitit --version
+
+git --version
+
+read -p "En
