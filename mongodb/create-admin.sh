@@ -25,7 +25,7 @@ sudo rm /root/.mongo_admin_password
 
 # Secure MongoDB by enabling authentication and disabling remote root access
 sudo sed -i 's/#security:/security:\n  authorization: enabled/g' /etc/mongod.conf
-#sudo sed -i 's/#disableRemoteManagement: false/disableRemoteManagement: true/g' /etc/mongod.conf
+sudo sed -i 's/#disableRemoteManagement: false/disableRemoteManagement: true/g' /etc/mongod.conf
 
 # Restart the MongoDB service to apply the configuration changes
 sudo systemctl restart mongod
