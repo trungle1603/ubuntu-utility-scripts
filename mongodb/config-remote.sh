@@ -12,3 +12,7 @@ sudo ufw allow from $trusted_ip to any port 27017
 
 # Configure MongoDB to listen on the server's ip address
 sudo sed -i "s/bindIp: 127.0.0.1/bindIp: 127.0.0.1,${server_ip}/g" /etc/mongod.conf
+
+# Restart mongod
+sudo systemctl restart mongod
+sudo systemctl status mongod
