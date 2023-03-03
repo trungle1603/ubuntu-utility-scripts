@@ -2,21 +2,17 @@
 
 echo "Install Node.js LTS"
 
-# Check if Node.js is already installed
-if command -v node &> /dev/null
-then
-    echo "Node.js is already installed."
-else
-    # Add the Node.js PPA
-    curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-    sudo apt-get install -y nodejs build-essential
+# Add the Node.js PPA
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs build-essential git
 
-    # Confirm that Node.js is installed
-    node -v
-fi
+# Confirm that Node.js is installed
+node -v
 
 # Install yarn, typescript, nestjs
 sudo corepack enable
-sudo npm install -g typescript @nestjs/cli
+sudo npm install -g typescript @nestjs/cli pm2@latest
 
-echo "Successfull"
+pm2 startup systemd
+pm2 save
+pm2 status
