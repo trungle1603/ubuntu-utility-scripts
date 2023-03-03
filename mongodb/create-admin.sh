@@ -14,4 +14,3 @@ sudo sed -i 's/#security:/security:\n  authorization: enabled/g' /etc/mongod.con
 
 # Restart the MongoDB service to apply the configuration changes
 sudo systemctl restart mongod
-

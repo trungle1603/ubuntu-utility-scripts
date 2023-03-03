@@ -16,6 +16,11 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 
+# Grant permission for mongodb user
+cd ~
+sudo chown -R mongodb:mongodb /var/lib/mongodb/
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+
 # Start the MongoDB service
 sudo systemctl start mongod.service
 
