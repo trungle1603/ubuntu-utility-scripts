@@ -17,8 +17,10 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 
 # Start the MongoDB service
-#sudo systemctl start mongod
+sudo systemctl start mongod.service
 
 # Enable the MongoDB service to start on boot
-#sudo systemctl enable mongod
-#sudo systemctl status mongod
+sudo systemctl enable mongod.service
+
+# Checking status
+mongo --eval 'db.runCommand({ connectionStatus: 1 })'
