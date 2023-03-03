@@ -1,9 +1,23 @@
 #!/bin/bash
 
-sudo sh ./install-git.sh
+echo "Initial server"
 
-sudo sh ./install-nodejs.sh
+echo "The default services are installed: git, nodejs, yarn, pm2"
 
-sudo sh ./install-pm2.sh
+echo "Choose option services: "
 
-sudo sh ./mongodb/install.sh
+echo "mongodb"
+
+echo "redis"
+
+read -p "Enter service you choose, separated by spaces: " services
+
+sudo bash ./git/install.sh
+sudo bash ./nodejs/install.sh
+sudo bash ./pm2/install.sh
+
+
+for service in $services
+do
+  sudo bash ./$service/install.sh
+done
