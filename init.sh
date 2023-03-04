@@ -2,7 +2,7 @@
 
 echo "Initial server"
 
-echo "The default services are installed: git, nodejs, yarn, pm2"
+echo "The default services are installed: nodejs, yarn, pm2"
 
 echo "Choose option services: "
 echo "mongodb"
