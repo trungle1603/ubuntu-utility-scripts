@@ -1,0 +1,7 @@
+db.createUser({
+    user: "myTester",
+    pwd: passwordPrompt(),
+    roles: [
+        { role: "readWrite", db: "test" },
+    ],
+});
