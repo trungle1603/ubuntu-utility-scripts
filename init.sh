@@ -12,7 +12,7 @@ read -p "Enter service you choose, separated by spaces: " services
 
 # Install default
 sudo bash ./nodejs/install.sh
-'
+
 # Install optional
 for service in $services
 do
