@@ -8,4 +8,4 @@ read -p "Enter the username: " username
 read -p "Enter the database: " database
 echo ""
 
-mongosh --port 27017 -u $username --authenticationDatabase $database -p
+mongo --port 27017 -u $username --authenticationDatabase $database -p
