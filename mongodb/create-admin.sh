@@ -3,7 +3,7 @@
 # Use bash to open this file
 
 # Prompt the user to enter a password for the admin user
-read -s -p "Enter a username for admin user" mongo_admin_username
+read -p "Enter a username for admin user: " mongo_admin_username
 
 echo "Enter a password for admin user:"
 sudo sh -c 'read -s mongo_admin_password && echo $mongo_admin_password > /root/.mongo_admin_password'
