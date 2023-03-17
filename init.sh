@@ -7,7 +7,7 @@ echo "NodeJs, MongoDB, Redis"
 read -p "Enter a new SSH port number: " ssh_port
 
 # Update the system
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update -y
 
 # Disable root login
 sudo sed -i 's/#PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
