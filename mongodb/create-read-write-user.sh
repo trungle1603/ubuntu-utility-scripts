@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Enter username and password for the user
-read -s -p "Enter username: " mongo_rw_username
-read -s -p "Enter db grant for user: " mongo_rw_db
+echo "Creating MongoDB user..."
 
-echo "Enter password: "
-sudo sh -c 'read -s mongo_rw_password && echo $mongo_rw_password > /root/.mongo_rw_password'
-echo
+read -p "Enter the username: " username
+read -p "Enter the database: " database
 
-# Create a read-write user with the provided username and password
-mongo admin --eval "db.createUser({ user: '$mongo_rw_username', pwd: '$(cat /root/.mongo_rw_password)', roles: [ { role: 'readWrite', db: '$mongo_rw_db' } ] })" -u admin -p "$(cat /root/.mongo_admin_password)" --authenticationDatabase admin --host localhost
+# Read the password without echoing to the terminal
+echo -n "Enter the password: "
+read -s password
+echo ""
 
-sudo rm /root/.mongo_rw_password
+# Create the admin user with the given username and password
+mongo $database --eval "db.createUser({ user: '$username', pwd: '$password', roles: [ { role: 'readWrite', db: '$database'} ] })"
 
-echo "Successful"
+echo "MongoDB user created."
