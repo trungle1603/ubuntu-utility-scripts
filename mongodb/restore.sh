@@ -4,8 +4,8 @@ read -p "Enter the databse: " DATABASE
 read -p "Enter the username: " USERNAME
 
 # Set the backup directory and timestamp
-BACKUP_DIR="~/ubuntu-backups/mongodb"
-TIMESTAMP="YYYY-MM-DD"
+BACKUP_DIR="/ubuntu-backups/mongodb"
+TIMESTAMP=$(date "+%Y-%m-%d")
 
 echo "Restoring MongoDB database..."
 
