@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Set the backup directory and timestamp
 DB_NAME="base-app"
-BACKUP_DIR="/ubuntu-backups/mongodb"
+BACKUP_DIR="ubuntu-backups/mongodb"
 TIMESTAMP=$(date "+%Y-%m-%d")
 
 
