@@ -1,9 +1,8 @@
 # Get the name of connected network interface
-network_interface=$(ip route get 1.1.1.1 | grep -oP '(?<=dev\s)\w+' | head -1)
+NETWORK_INTERFACE=$(ip route get 1.1.1.1 | grep -oP '(?<=dev\s)\w+' | head -1)
 
 # Get server ip address
-server_ip=$(ip -4 addr show $network_interface | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+SERVER_IP=$(ip -4 addr show $NETWORK_INTERFACE | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 
 # or just use: hostname -I
-
-echo "${server_ip}"
+echo "${SERVER_IP}"

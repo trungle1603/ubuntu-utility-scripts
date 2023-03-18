@@ -2,10 +2,8 @@
 
 echo "Login..."
 
-read -p "Enter the username: " username
-
-# Read the password without echoing to the terminal
-read -p "Enter the database: " database
+read -p "Enter the username: " USERNAME
+read -p "Enter the database: " DATABASE
 echo ""
 
-mongo --port 27017 -u $username --authenticationDatabase $database -p
+mongo --port 27017 -u $USERNAME --authenticationDatabase $DATABASE -p

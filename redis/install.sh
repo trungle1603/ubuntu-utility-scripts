@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Install Redis
-sudo apt-get update
 sudo apt-get install redis-server -y
 
 # Configure Redis to be supervised by systemd

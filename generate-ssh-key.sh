@@ -4,10 +4,10 @@
 if [ -f ~/.ssh/id_ed25519 ]; then
     echo "SSH key already exists"
 else
-    read -p "Prompt email: " email
+    read -p "Prompt email: " EMAIL
 
     # Generate a new SSH key
-    ssh-keygen -t ed25519 -C "$email"
+    ssh-keygen -t ed25519 -C "$EMAIL"
 
     # Add the SSH key to the ssh-agent
     eval "$(ssh-agent -s)"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -p "SSH port number: " ssh_port
-read -p "SSH user: " ssh_user
-read -p "SSH host: " ssh_host
+read -p "SSH port number: " PORT
+read -p "SSH user: " USER
+read -p "SSH host: " HOST
 
-cat ~/.ssh/id_rsa.pub | ssh -p $ssh_port $ssh_user@$ssh_host "cat >> .ssh/authorized_keys"
+cat ~/.ssh/id_rsa.pub | ssh -p $PORT $USER@$HOST "cat >> .ssh/authorized_keys"

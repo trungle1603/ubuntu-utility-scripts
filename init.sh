@@ -4,7 +4,7 @@ echo "Initial server"
 echo "The Services Install:" 
 echo "NodeJs, MongoDB, Redis"
 
-read -p "Enter a new SSH port number: " ssh_port
+read -p "Enter a new SSH port number: " SSH_PORT
 
 # Update the system
 sudo apt-get update -y
@@ -12,7 +12,7 @@ sudo apt-get update -y
 # Disable root login
 sudo sed -i 's/#PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
 # Change default SSH port
-sudo sed -i "s/#Port 22/Port $ssh_port/g" /etc/ssh/sshd_config
+sudo sed -i "s/#Port 22/Port $SSH_PORT/g" /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
 # Install requires package
