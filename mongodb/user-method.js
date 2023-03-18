@@ -1,18 +1,16 @@
 // https://www.mongodb.com/docs/manual/reference/method/js-user-management/
 
-db.createUser({
-    user: "readWriteUser",
-    pwd: passwordPrompt(),
-    roles: [{ role: "readWrite", db: "test" }],
-});
+roles = [
+    { role: "root", db: "admin" },
+    { role: "readWrite", db: "test" },
+    { role: "backup", db: "test" },
+    { role: "restore", db: "test" },
+];
 
 db.createUser({
     user: "backupUser",
     pwd: passwordPrompt(),
-    roles: [
-        { role: "backup", db: "test" },
-        { role: "restore", db: "test" },
-    ],
+    roles: [{ role: "backup", db: "test" }],
 });
 
 db.dropUser("exampleUser", { w: "majority", wtimeout: 5000 });
@@ -20,3 +18,4 @@ db.dropUser("exampleUser", { w: "majority", wtimeout: 5000 });
 db.changeUserPassword("username", passwordPrompt());
 
 db.getUsers({});
+db.getUser("username");
