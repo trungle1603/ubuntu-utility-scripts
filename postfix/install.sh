@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Postfix with TLS encryption and SMTP authentication
+
 # Update the package list
 apt-get -y update
 
@@ -38,3 +40,10 @@ systemctl restart postfix
 # - Hash sasl_passwd
 # - Restart Postfix
 # - If change username in sasl_passwd, update smtp_sasl_password_maps in /etc/postfix/main.cf 
+
+# Security guide:
+# Using a firewall to restrict incoming and outgoing connections to the Postfix server.
+# Configuring spam and virus filters to protect against malicious email content.
+# Using DNS-based Authentication of Named Entities (DANE) to verify TLS certificates for secure email transmissions.
+# Enabling DNS Security Extensions (DNSSEC) to protect against DNS spoofing and other attacks.
+# Configuring Postfix to log email activity for auditing purposes.
