@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get -y update
+
 # Import the MongoDB public GPG key
 curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get -y update
+
 # Install Redis
 sudo apt-get install redis-server -y
 
