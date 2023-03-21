@@ -12,4 +12,4 @@ sudo apt-get install -y nodejs build-essential
 node -v
 
 # Enable yarn
-sudo npm install --global yarn
+sudo npm install --global yarn pm2@latest

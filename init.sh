@@ -32,3 +32,4 @@ sudo systemctl restart fail2ban
 sudo bash ./nodejs/install.sh
 sudo bash ./mongodb/install.sh
 sudo bash ./redis/install.sh
+sudo bash ./postfix/install.sh
