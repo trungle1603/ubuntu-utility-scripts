@@ -6,16 +6,17 @@ read -p "Enter a domain name: " DOMAIN_NAME
 read -p "Enter a app name: " APP_NAME
 read -p "Enter a app port:" APP_PORT
 
-sudo tee /etc/nginx/sites-available/$APP_NAME > /dev/null <<EOF
+sudo tee /etc/nginx/sites-available/$DOMAIN_NAME > /dev/null <<EOF
 server {
   listen 80;
-  server_name $DOMAIN_NAME;
+  listen [::]:80;
+  server_name $DOMAIN_NAME www.$DOMAIN_NAME;
   return 301 https://$server_name$request_uri;
 }
 
 server {
     listen 443 ssl;
-    server_name $DOMAIN_NAME;
+    server_name $DOMAIN_NAME www.$DOMAIN_NAME;
 
     ssl_certificate /etc/letsencrypt/live/$DOMAIN_NAME/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/$DOMAIN_NAME/privkey.pem;
