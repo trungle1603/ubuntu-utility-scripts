@@ -16,7 +16,7 @@ sudo sed -i "s/#Port 22/Port $SSH_PORT/g" /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
 # Install requires package
-sudo apt-get install -y ufw fail2ban nginx nano
+sudo apt-get install -y ufw fail2ban nginx nano certbot python3-certbot-nginx clamav clamav-daemon
 
 # Configure the firewall
 sudo ufw enable
