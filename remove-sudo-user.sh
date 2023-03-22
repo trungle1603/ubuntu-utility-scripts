@@ -1,0 +1,1 @@
+sudo deluser USERNAME sudo
