@@ -16,7 +16,7 @@ sudo sed -i "s/#Port 22/Port $SSH_PORT/g" /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
 # Install requires package
-sudo apt-get install -y ufw fail2ban nginx nano certbot python3-certbot-nginx clamav clamav-daemon
+sudo apt-get install -y ufw fail2ban nginx nano clamav clamav-daemon
 
 # Configure the firewall
 sudo ufw enable
@@ -32,4 +32,11 @@ sudo systemctl restart fail2ban
 sudo bash ./nodejs/install.sh
 sudo bash ./mongodb/install.sh
 sudo bash ./redis/install.sh
+sudo bash ./certbot.install.sh
 sudo bash ./postfix/install.sh
+
+node -v
+redis-server -v
+certbot --version
+mongo --version
+postconf -d mail_version
